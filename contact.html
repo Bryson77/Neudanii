@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — NEUDANII</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Bebas+Neue&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <div class="noise"></div>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo"><a href="index.html">NEUDANII</a></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"    class="nav-link">Home</a></li>
+      <li><a href="about.html"    class="nav-link">About Us</a></li>
+      <li><a href="gallery.html"  class="nav-link">Gallery</a></li>
+      <li><a href="contact.html"  class="nav-link active">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg-text">CONTACT</div>
+    <div class="page-hero-content">
+      <p class="hero-sub reveal">— Get In Touch</p>
+      <h1 class="page-hero-title reveal">Begin your <em>commission.</em></h1>
+      <p class="hero-desc reveal">Every great piece starts with a conversation. Tell us what you have in mind — no idea is too bold, no vision too personal.</p>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>COMMISSIONS OPEN &nbsp;·&nbsp; 4–8 WEEK TURNAROUND &nbsp;·&nbsp; 1/1 ONLY &nbsp;·&nbsp; NEUDANII &nbsp;·&nbsp; COMMISSIONS OPEN &nbsp;·&nbsp; 4–8 WEEK TURNAROUND &nbsp;·&nbsp; 1/1 ONLY &nbsp;·&nbsp; NEUDANII &nbsp;·&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- CONTACT MAIN -->
+  <section class="contact">
+    <div class="contact-grid">
+
+      <!-- LEFT INFO -->
+      <div class="contact-left">
+        <div class="section-tag reveal">— Commission Info</div>
+        <h2 class="section-title reveal">Let's build <em>something.</em></h2>
+        <p class="contact-body reveal">
+          Fill out the form and we'll get back to you within 48 hours. The more detail you give us upfront — references, materials you love, pieces you've worn, vibes you're going for — the better. There are no bad ideas here.
+        </p>
+        <p class="contact-body reveal">
+          All commissions are fully custom, fully unique, and come with a certificate of authenticity confirming your piece as a genuine 1/1 Neudanii creation.
+        </p>
+
+        <div class="contact-info reveal">
+          <div class="info-line">
+            <span class="info-label">Email</span>
+            <a href="mailto:studio@neudanii.com">studio@neudanii.com</a>
+          </div>
+          <div class="info-line">
+            <span class="info-label">Instagram</span>
+            <a href="#">@neudanii</a>
+          </div>
+          <div class="info-line">
+            <span class="info-label">Turnaround Time</span>
+            <span>4–8 weeks per piece</span>
+          </div>
+          <div class="info-line">
+            <span class="info-label">Consultation</span>
+            <span>Free — no obligation</span>
+          </div>
+          <div class="info-line">
+            <span class="info-label">Materials</span>
+            <span>Sustainable & recycled where possible</span>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq reveal">
+          <div class="section-tag" style="margin-top:56px">— Common Questions</div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h4>What types of clothing can you customise?</h4>
+              <p>Anything you wear. Jackets, jeans, coats, shirts, hoodies, trousers, accessories, shoes — if it exists as clothing, we can customise it. We also build pieces entirely from scratch.</p>
+            </div>
+            <div class="faq-item">
+              <h4>Do you use sustainable materials?</h4>
+              <p>Yes — always where possible. We actively source organic cotton, recycled fabrics, reclaimed denim, deadstock silks, and repurposed leather. We'll always tell you exactly what's going into your piece.</p>
+            </div>
+            <div class="faq-item">
+              <h4>How much does a commission cost?</h4>
+              <p>Every piece is priced individually based on materials, complexity, and time. We'll discuss pricing openly during your free consultation — no surprises, ever.</p>
+            </div>
+            <div class="faq-item">
+              <h4>Will my piece ever be duplicated?</h4>
+              <p>Never. Every Neudanii piece comes with a numbered certificate of authenticity. Your design, your colourways, your exact spec — it will never be replicated.</p>
+            </div>
+            <div class="faq-item">
+              <h4>Can I send in my own garment to be reworked?</h4>
+              <p>Absolutely. Reworks and customisations on pieces you already own are welcome — and often produce the most personal results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT FORM -->
+      <div class="contact-right reveal">
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="instagram">Instagram (optional)</label>
+            <input type="text" id="instagram" placeholder="@yourhandle" />
+          </div>
+          <div class="form-group">
+            <label for="piece">Type of Piece</label>
+            <select id="piece">
+              <option value="">Select a category</option>
+              <option>Outerwear (jacket, coat, trench)</option>
+              <option>Tops (shirt, tee, hoodie)</option>
+              <option>Bottoms (jeans, trousers, shorts)</option>
+              <option>Accessories (belt, bag, hat)</option>
+              <option>Full Look</option>
+              <option>Rework / Customisation on existing piece</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="budget">Approximate Budget</label>
+            <select id="budget">
+              <option value="">Select a range</option>
+              <option>Under R2,000</option>
+              <option>R2,000 – R5,000</option>
+              <option>R5,000 – R10,000</option>
+              <option>R10,000+</option>
+              <option>Let's discuss</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Vision</label>
+            <textarea id="message" rows="6" placeholder="Describe your idea — materials you love, references, colour palette, vibe, how you want to feel wearing it..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="timeline">Desired Timeline</label>
+            <input type="text" id="timeline" placeholder="e.g. Ready by end of April, no rush, etc." />
+          </div>
+          <button type="submit" class="btn-submit">Send Inquiry</button>
+          <div class="form-success" id="formSuccess">✦ Your message has been received. We'll be in touch within 48 hours.</div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">NEUDANII</div>
+      <p class="footer-tagline">One of One. Always.</p>
+    </div>
+    <div class="footer-mid">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Neudanii. All rights reserved.</span>
+      <span>Bespoke. 1/1. Yours.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

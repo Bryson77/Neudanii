@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — NEUDANII</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Bebas+Neue&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <div class="noise"></div>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo"><a href="index.html">NEUDANII</a></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"    class="nav-link">Home</a></li>
+      <li><a href="about.html"    class="nav-link">About Us</a></li>
+      <li><a href="gallery.html"  class="nav-link active">Gallery</a></li>
+      <li><a href="contact.html"  class="nav-link">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg-text">ARCHIVE</div>
+    <div class="page-hero-content">
+      <p class="hero-sub reveal">— The Portfolio</p>
+      <h1 class="page-hero-title reveal">The <em>Archive</em></h1>
+      <p class="hero-desc reveal">Each piece is unique. Each story, unrepeatable. Every item shown here was made once — for one person — and will never be made again.</p>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>ONE OF ONE &nbsp;·&nbsp; OUTERWEAR &nbsp;·&nbsp; TOPS &nbsp;·&nbsp; BOTTOMS &nbsp;·&nbsp; ACCESSORIES &nbsp;·&nbsp; CUSTOM EVERYTHING &nbsp;·&nbsp; ONE OF ONE &nbsp;·&nbsp; OUTERWEAR &nbsp;·&nbsp; TOPS &nbsp;·&nbsp; BOTTOMS &nbsp;·&nbsp; ACCESSORIES &nbsp;·&nbsp; CUSTOM EVERYTHING &nbsp;·&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- GALLERY SECTION -->
+  <section class="gallery-section">
+    <div class="gallery-filter reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="outerwear">Outerwear</button>
+      <button class="filter-btn" data-filter="tops">Tops</button>
+      <button class="filter-btn" data-filter="bottoms">Bottoms</button>
+      <button class="filter-btn" data-filter="accessories">Accessories</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+
+      <div class="gallery-item large" data-category="outerwear">
+        <div class="gallery-img">
+          <div class="img-placeholder"><span>01</span></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="item-cat">Outerwear</span>
+          <h3 class="item-name">Obsidian Trench</h3>
+          <span class="item-tag">1 / 1</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="tops">
+        <div class="gallery-img">
+          <div class="img-placeholder"><span>02</span></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="item-cat">Tops</span>
+          <h3 class="item-name">Carved Linen Shirt</h3>
+          <span class="item-tag">1 / 1</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="accessories">
+        <div class="gallery-img">
+          <div class="img-placeholder"><span>03</span></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="item-cat">Accessories</span>
+          <h3 class="item-name">Chain Wrap Belt</h3>
+          <span class="item-tag">1 / 1</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="bottoms">
+        <div class="gallery-img">
+          <div class="img-placeholder"><span>04</span></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="item-cat">Bottoms</span>
+          <h3 class="item-name">Deconstructed Denim</h3>
+          <span class="item-tag">1 / 1</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="tops">
+        <div class="gallery-img">
+          <div class="img-placeholder"><span>05</span></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="item-cat">Tops</span>
+          <h3 class="item-name">Relic Graphic Tee</h3>
+          <span class="item-tag">1 / 1</span>
+        </div>
+      </div>
+
+      <div class="gallery-item large" data-category="outerwear">
+        <div class="gallery-img">
+          <div class="img-placeholder"><span>06</span></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="item-cat">Outerwear</span>
+          <h3 class="item-name">Phantom Leather Jacket</h3>
+          <span class="item-tag">1 / 1</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="accessories">
+        <div class="gallery-img">
+          <div class="img-placeholder"><span>07</span></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="item-cat">Accessories</span>
+          <h3 class="item-name">Hand-Stitched Tote</h3>
+          <span class="item-tag">1 / 1</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="bottoms">
+        <div class="gallery-img">
+          <div class="img-placeholder"><span>08</span></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="item-cat">Bottoms</span>
+          <h3 class="item-name">Void Wide Trousers</h3>
+          <span class="item-tag">1 / 1</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="tops">
+        <div class="gallery-img">
+          <div class="img-placeholder"><span>09</span></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="item-cat">Tops</span>
+          <h3 class="item-name">Bleached Canvas Overshirt</h3>
+          <span class="item-tag">1 / 1</span>
+        </div>
+      </div>
+
+      <div class="gallery-item large" data-category="outerwear">
+        <div class="gallery-img">
+          <div class="img-placeholder"><span>10</span></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="item-cat">Outerwear</span>
+          <h3 class="item-name">Raw Edge Wool Coat</h3>
+          <span class="item-tag">1 / 1</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="accessories">
+        <div class="gallery-img">
+          <div class="img-placeholder"><span>11</span></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="item-cat">Accessories</span>
+          <h3 class="item-name">Woven Leather Cap</h3>
+          <span class="item-tag">1 / 1</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="bottoms">
+        <div class="gallery-img">
+          <div class="img-placeholder"><span>12</span></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="item-cat">Bottoms</span>
+          <h3 class="item-name">Reconstructed Cargo</h3>
+          <span class="item-tag">1 / 1</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gallery-cta reveal">
+      <p class="gallery-cta-note">Don't see your vision here? That's the point — we build from scratch, not from what already exists.</p>
+      <a href="contact.html" class="btn-outline">Commission a Piece</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">NEUDANII</div>
+      <p class="footer-tagline">One of One. Always.</p>
+    </div>
+    <div class="footer-mid">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Neudanii. All rights reserved.</span>
+      <span>Bespoke. 1/1. Yours.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
