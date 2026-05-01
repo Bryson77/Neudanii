@@ -138,21 +138,47 @@ document.addEventListener('DOMContentLoaded', () => {
   const formSuccess = document.getElementById('formSuccess');
 
   if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('.btn-submit');
+      const originalText = btn.textContent;
       btn.textContent = 'Sending…';
       btn.disabled = true;
 
-      setTimeout(() => {
-        form.reset();
-        btn.textContent = 'Send Inquiry';
-        btn.disabled = false;
-        if (formSuccess) {
-          formSuccess.style.display = 'block';
-          setTimeout(() => { formSuccess.style.display = 'none'; }, 6000);
+      const formData = {
+        name:      document.getElementById('name').value,
+        email:     document.getElementById('email').value,
+        instagram: document.getElementById('instagram').value,
+        piece:     document.getElementById('piece').value,
+        budget:    document.getElementById('budget').value,
+        message:   document.getElementById('message').value,
+        timeline:  document.getElementById('timeline').value,
+      };
+
+      try {
+        const response = await fetch('https://emailneudanii.lethabomabilo53.workers.dev', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          form.reset();
+          btn.textContent = originalText;
+          btn.disabled = false;
+          if (formSuccess) {
+            formSuccess.style.display = 'block';
+            setTimeout(() => { formSuccess.style.display = 'none'; }, 6000);
+          }
+        } else {
+          throw new Error('Failed to send');
         }
-      }, 1400);
+      } catch (error) {
+        console.error('Error:', error);
+        btn.textContent = 'Error — Try Again';
+        btn.disabled = false;
+        setTimeout(() => { btn.textContent = originalText; }, 3000);
+      }
     });
   }
 
