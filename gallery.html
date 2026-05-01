@@ -8,6 +8,81 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Bebas+Neue&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Gallery grid matching index photo-showcase style ── */
+    .gallery-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 520px;
+      gap: 6px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .gallery-photo-item {
+      position: relative;
+      overflow: hidden;
+      background: var(--black-soft);
+    }
+
+    .gallery-photo-item.tall {
+      grid-row: span 2;
+    }
+
+    .gallery-photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top; /* portrait — keeps face/top of subject in frame */
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .gallery-photo-item:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Subtle overlay on hover for the label */
+    .gallery-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity 0.38s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 22px 24px;
+    }
+
+    .gallery-photo-item:hover .gallery-photo-overlay {
+      opacity: 1;
+    }
+
+    .gallery-photo-label {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .gallery-photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-photo-grid {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+      .gallery-photo-item.tall {
+        grid-row: span 1;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -48,146 +123,136 @@
 
   <!-- GALLERY SECTION -->
   <section class="gallery-section">
-    <div class="gallery-filter reveal">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="outerwear">Outerwear</button>
-      <button class="filter-btn" data-filter="tops">Tops</button>
-      <button class="filter-btn" data-filter="bottoms">Bottoms</button>
-      <button class="filter-btn" data-filter="accessories">Accessories</button>
-    </div>
 
-    <div class="gallery-grid" id="galleryGrid">
+    <div class="gallery-photo-grid">
 
-      <div class="gallery-item large" data-category="outerwear">
-        <div class="gallery-img">
-          <div class="img-placeholder"><span>01</span></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="item-cat">Outerwear</span>
-          <h3 class="item-name">Obsidian Trench</h3>
-          <span class="item-tag">1 / 1</span>
-        </div>
+      <!-- ROW 1 -->
+      <div class="gallery-photo-item reveal">
+        <img src="pictures/churchYT4.jpg" alt="Neudanii piece 01" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
       </div>
 
-      <div class="gallery-item" data-category="tops">
-        <div class="gallery-img">
-          <div class="img-placeholder"><span>02</span></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="item-cat">Tops</span>
-          <h3 class="item-name">Carved Linen Shirt</h3>
-          <span class="item-tag">1 / 1</span>
-        </div>
+      <div class="gallery-photo-item tall reveal">
+        <img src="pictures/beanies.jpg" alt="Neudanii piece 02" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
       </div>
 
-      <div class="gallery-item" data-category="accessories">
-        <div class="gallery-img">
-          <div class="img-placeholder"><span>03</span></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="item-cat">Accessories</span>
-          <h3 class="item-name">Chain Wrap Belt</h3>
-          <span class="item-tag">1 / 1</span>
-        </div>
+      <div class="gallery-photo-item reveal">
+        <img src="pictures/1764962853485.JPG" alt="Neudanii piece 03" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
       </div>
 
-      <div class="gallery-item" data-category="bottoms">
-        <div class="gallery-img">
-          <div class="img-placeholder"><span>04</span></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="item-cat">Bottoms</span>
-          <h3 class="item-name">Deconstructed Denim</h3>
-          <span class="item-tag">1 / 1</span>
-        </div>
+      <!-- ROW 2 (item 02 tall spans here) -->
+      <div class="gallery-photo-item reveal">
+        <img src="pictures/IMG-20260130-WA0061.jpg" alt="Neudanii piece 04" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
       </div>
 
-      <div class="gallery-item" data-category="tops">
-        <div class="gallery-img">
-          <div class="img-placeholder"><span>05</span></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="item-cat">Tops</span>
-          <h3 class="item-name">Relic Graphic Tee</h3>
-          <span class="item-tag">1 / 1</span>
-        </div>
+      <div class="gallery-photo-item reveal">
+        <img src="pictures/1764962854700.JPG" alt="Neudanii piece 05" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
       </div>
 
-      <div class="gallery-item large" data-category="outerwear">
-        <div class="gallery-img">
-          <div class="img-placeholder"><span>06</span></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="item-cat">Outerwear</span>
-          <h3 class="item-name">Phantom Leather Jacket</h3>
-          <span class="item-tag">1 / 1</span>
-        </div>
+      <!-- ROW 3 -->
+      <div class="gallery-photo-item reveal">
+        <img src="pictures/IMG_0787.JPG" alt="Neudanii piece 06" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
       </div>
 
-      <div class="gallery-item" data-category="accessories">
-        <div class="gallery-img">
-          <div class="img-placeholder"><span>07</span></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="item-cat">Accessories</span>
-          <h3 class="item-name">Hand-Stitched Tote</h3>
-          <span class="item-tag">1 / 1</span>
-        </div>
+      <div class="gallery-photo-item reveal">
+        <img src="pictures/IMG-20260317-WA0089.jpg" alt="Neudanii piece 07" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
       </div>
 
-      <div class="gallery-item" data-category="bottoms">
-        <div class="gallery-img">
-          <div class="img-placeholder"><span>08</span></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="item-cat">Bottoms</span>
-          <h3 class="item-name">Void Wide Trousers</h3>
-          <span class="item-tag">1 / 1</span>
-        </div>
+      <div class="gallery-photo-item tall reveal">
+        <img src="<!-- PATH TO IMAGE 08 -->" alt="Neudanii piece 08" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
       </div>
 
-      <div class="gallery-item" data-category="tops">
-        <div class="gallery-img">
-          <div class="img-placeholder"><span>09</span></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="item-cat">Tops</span>
-          <h3 class="item-name">Bleached Canvas Overshirt</h3>
-          <span class="item-tag">1 / 1</span>
-        </div>
+      <!-- ROW 4 (item 08 tall spans here) -->
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 09 -->" alt="Neudanii piece 09" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
       </div>
 
-      <div class="gallery-item large" data-category="outerwear">
-        <div class="gallery-img">
-          <div class="img-placeholder"><span>10</span></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="item-cat">Outerwear</span>
-          <h3 class="item-name">Raw Edge Wool Coat</h3>
-          <span class="item-tag">1 / 1</span>
-        </div>
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 10 -->" alt="Neudanii piece 10" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
       </div>
 
-      <div class="gallery-item" data-category="accessories">
-        <div class="gallery-img">
-          <div class="img-placeholder"><span>11</span></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="item-cat">Accessories</span>
-          <h3 class="item-name">Woven Leather Cap</h3>
-          <span class="item-tag">1 / 1</span>
-        </div>
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 11 -->" alt="Neudanii piece 11" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
       </div>
 
-      <div class="gallery-item" data-category="bottoms">
-        <div class="gallery-img">
-          <div class="img-placeholder"><span>12</span></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="item-cat">Bottoms</span>
-          <h3 class="item-name">Reconstructed Cargo</h3>
-          <span class="item-tag">1 / 1</span>
-        </div>
+      <!-- ROW 5 -->
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 12 -->" alt="Neudanii piece 12" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
+      </div>
+
+      <div class="gallery-photo-item tall reveal">
+        <img src="<!-- PATH TO IMAGE 13 -->" alt="Neudanii piece 13" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
+      </div>
+
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 14 -->" alt="Neudanii piece 14" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
+      </div>
+
+      <!-- ROW 6 (item 13 tall spans here) -->
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 15 -->" alt="Neudanii piece 15" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
+      </div>
+
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 16 -->" alt="Neudanii piece 16" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
+      </div>
+
+      <!-- ROW 7 -->
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 17 -->" alt="Neudanii piece 17" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
+      </div>
+
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 18 -->" alt="Neudanii piece 18" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
+      </div>
+
+      <div class="gallery-photo-item tall reveal">
+        <img src="<!-- PATH TO IMAGE 19 -->" alt="Neudanii piece 19" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
+      </div>
+
+      <!-- ROW 8 (item 19 tall spans here) -->
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 20 -->" alt="Neudanii piece 20" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
+      </div>
+
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 21 -->" alt="Neudanii piece 21" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
+      </div>
+
+      <!-- ROW 9 -->
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 22 -->" alt="Neudanii piece 22" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
+      </div>
+
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 23 -->" alt="Neudanii piece 23" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
+      </div>
+
+      <div class="gallery-photo-item reveal">
+        <img src="<!-- PATH TO IMAGE 24 -->" alt="Neudanii piece 24" />
+        <div class="gallery-photo-overlay"><span class="gallery-photo-label">1 / 1</span></div>
       </div>
 
     </div>
