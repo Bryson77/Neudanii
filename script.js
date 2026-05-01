@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       try {
-        const response = await fetch('https://emailneudanii.lethabomabilo53.workers.dev', {
+        const response = await fetch('https://emailrouter.lethabomabilo53.workers.dev', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
