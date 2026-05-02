@@ -140,46 +140,99 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      
       const btn = form.querySelector('.btn-submit');
       const originalText = btn.textContent;
+      
+      // Update button state
       btn.textContent = 'Sending…';
       btn.disabled = true;
+      btn.style.opacity = '0.6';
 
+      // Collect form data
       const formData = {
-        name:      document.getElementById('name').value,
-        email:     document.getElementById('email').value,
-        instagram: document.getElementById('instagram').value,
+        name:      document.getElementById('name').value.trim(),
+        email:     document.getElementById('email').value.trim(),
+        instagram: document.getElementById('instagram').value.trim(),
         piece:     document.getElementById('piece').value,
         budget:    document.getElementById('budget').value,
-        message:   document.getElementById('message').value,
-        timeline:  document.getElementById('timeline').value,
+        message:   document.getElementById('message').value.trim(),
+        timeline:  document.getElementById('timeline').value.trim(),
       };
 
       try {
-        const response = await fetch('https://emailrouter.lethabomabilo53.workers.dev', {
+        // Send to Cloudflare Worker
+        const response = await fetch('https://neudaniiemails.lethabomabilo53.workers.dev', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+          },
           body: JSON.stringify(formData),
         });
 
-        if (response.ok) {
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          // Success!
           form.reset();
-          btn.textContent = originalText;
-          btn.disabled = false;
+          
           if (formSuccess) {
             formSuccess.style.display = 'block';
-            setTimeout(() => { formSuccess.style.display = 'none'; }, 6000);
+            formSuccess.style.opacity = '0';
+            
+            // Fade in success message
+            setTimeout(() => {
+              formSuccess.style.transition = 'opacity 0.4s ease';
+              formSuccess.style.opacity = '1';
+            }, 10);
+            
+            // Auto-hide after 8 seconds
+            setTimeout(() => {
+              formSuccess.style.opacity = '0';
+              setTimeout(() => {
+                formSuccess.style.display = 'none';
+              }, 400);
+            }, 8000);
           }
+          
+          // Reset button
+          btn.textContent = originalText;
+          btn.disabled = false;
+          btn.style.opacity = '1';
+          
         } else {
-          throw new Error('Failed to send');
+          throw new Error(result.error || 'Failed to send');
         }
+        
       } catch (error) {
-        console.error('Error:', error);
-        btn.textContent = 'Error — Try Again';
-        btn.disabled = false;
-        setTimeout(() => { btn.textContent = originalText; }, 3000);
+        console.error('Form submission error:', error);
+        
+        // Show error state
+        btn.textContent = 'Error — Please Try Again';
+        btn.style.opacity = '1';
+        
+        // Reset button after 4 seconds
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }, 4000);
       }
     });
+
+    // Basic email validation on blur
+    const emailInput = document.getElementById('email');
+    if (emailInput) {
+      emailInput.addEventListener('blur', () => {
+        const email = emailInput.value.trim();
+        const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        
+        if (email && !isValid) {
+          emailInput.style.borderColor = '#d4af37';
+        } else {
+          emailInput.style.borderColor = '';
+        }
+      });
+    }
   }
 
 });
