@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
         // Send to Cloudflare Worker
-        const response = await fetch('https://neudaniiemails.lethabomabilo53.workers.dev', {
+        const response = await fetch('https://neudaniiemails.lethabomabilo53.workers.dev/', {
           method: 'POST',
           headers: { 
             'Content-Type': 'application/json',
