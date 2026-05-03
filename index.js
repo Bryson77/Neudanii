@@ -150,14 +150,16 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.style.opacity = '0.6';
 
       // Collect form data
+      const val  = id => document.getElementById(id)?.value?.trim() ?? '';
+      const pick = id => document.getElementById(id)?.value ?? '';
       const formData = {
-        name:      document.getElementById('name').value.trim(),
-        email:     document.getElementById('email').value.trim(),
-        instagram: document.getElementById('instagram').value.trim(),
-        piece:     document.getElementById('piece').value,
-        budget:    document.getElementById('budget').value,
-        message:   document.getElementById('message').value.trim(),
-        timeline:  document.getElementById('timeline').value.trim(),
+        name:      val('name'),
+        email:     val('email'),
+        instagram: val('instagram'),
+        piece:     pick('piece'),
+        budget:    pick('budget'),
+        message:   val('message'),
+        timeline:  val('timeline'),
       };
 
       try {
