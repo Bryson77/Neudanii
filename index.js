@@ -161,8 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       try {
-        // Send to Cloudflare Worker
-        const response = await fetch('https://neudaniiemails.lethabomabilo53.workers.dev/', {
+        // Send to Cloudflare Worker - NO TRAILING SLASH!
+        const response = await fetch('https://emailworkerneudanii.lethabomabilo53.workers.dev', {
           method: 'POST',
           headers: { 
             'Content-Type': 'application/json',
