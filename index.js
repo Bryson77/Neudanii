@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Hero parallax (home page only) ───────────────────────
+  // ── Hero parallax (home page only) ────────────────
   const heroBg = document.querySelector('.hero-bg-text');
   if (heroBg) {
     window.addEventListener('scroll', () => {
